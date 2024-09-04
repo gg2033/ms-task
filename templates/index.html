@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/output-style.css')}}">
+    <script src="../static/index.js"></script>
+    <title>Task-Generate</title>
+</head>
+<body>
+    <div class="header-2">
+
+        <nav class="bg-white py-2 md:py-4">
+          <div class="container px-4 mx-auto md:flex md:items-center">
+      
+            <div class="flex justify-between items-center">
+              <a href="#" class="font-bold text-xl text-indigo-600">Task Generate</a>
+              <button class="border border-solid border-gray-600 px-3 py-1 rounded text-gray-600 opacity-50 hover:opacity-75 md:hidden" id="navbar-toggle">
+                <i class="fas fa-bars"></i>
+              </button>
+            </div>
+      
+          </div>
+        </nav>
+      
+        <div class="bg-indigo-100 py-6 md:py-12">
+          <div class="container px-4 mx-auto">
+      
+            <div class="text-center max-w-2xl mx-auto">
+              <h1 class="text-3xl md:text-4xl font-medium mb-2">Subir Video</h1>
+              <form method="POST" action="/upload" enctype="multipart/form-data">
+                  <input class="bg-indigo-600 text-white py-2 px-6 rounded-full text-xl mt-6" type="file" name="file">
+                  <input class="bg-indigo-600 text-white py-2 px-6 rounded-full text-xl mt-6" type="submit">
+              </form>
+
+      
+              <form action="/task" method="POST">
+                <button type="submit" class="bg-indigo-600 text-white py-2 px-6 rounded-full text-xl mt-6">Generar Tarea</button>
+            </form>
+            <div>{{ mensaje }}</div>
+
+            </div>
+      
+            <div class="md:flex md:flex-wrap md:-mx-4 mt-6 md:mt-12">
+      
+              <div class="md:w-1/3 md:px-4 xl:px-6 mt-8 md:mt-0 text-center">
+                <span class="w-20 border-t-2 border-solid border-indigo-200 inline-block mb-3"></span>
+                <h5 class="text-xl font-medium uppercase mb-4">Make Your Conduct Count</h5>
+                <p class="text-gray-600">Respect, inclusiveness and shared ethical values are at the heart of Accenture’s culture and grounded in our core values. 
+                  Making your conduct count is about fostering these values and describes behaviors that we expect from—and for—our people so that they can be at their best each day. 
+                  There are five ways to make sure your conduct counts.</p>
+              </div>
+      
+              <div class="md:w-1/3 md:px-4 xl:px-6 mt-8 md:mt-0 text-center">
+                <span class="w-20 border-t-2 border-solid border-indigo-200 inline-block mb-3"></span>
+                <h5 class="text-xl font-medium uppercase mb-4">Comply with Laws</h5>
+                <p class="text-gray-600">We comply with all laws, whether local, national or regional. Accenture people, and those acting on our behalf, are responsible for understanding the applicable rules and must work with Legal to ensure compliance. Violations of law can result in significant harm to Accenture, including financial penalties, denial of government contracting privileges, imprisonment for criminal misconduct and damage to our business relationships and reputation.</p>
+              </div>
+      
+              <div class="md:w-1/3 md:px-4 xl:px-6 mt-8 md:mt-0 text-center">
+                <span class="w-20 border-t-2 border-solid border-indigo-200 inline-block mb-3"></span>
+                <h5 class="text-xl font-medium uppercase mb-4">Deliver for Our Clients</h5>
+                <p class="text-gray-600">We all serve Accenture’s clients, regardless of role— focusing on the best interests of our clients while acting as stewards of Accenture.</p>
+              </div>
+
+              <div class="md:w-1/3 md:px-4 xl:px-6 mt-8 md:mt-0 text-center">
+                <span class="w-20 border-t-2 border-solid border-indigo-200 inline-block mb-3"></span>
+                <h5 class="text-xl font-medium uppercase mb-4">Protect People, Information and Our Business</h5>
+                <p class="text-gray-600">We work together to build a better, stronger and more durable company for future generations, protecting the Accenture brand, meeting our commitments to protect information and intellectual property, acting with an owner mentality and protecting and developing our people</p>
+              </div>
+
+              <div class="md:w-1/3 md:px-4 xl:px-6 mt-8 md:mt-0 text-center">
+                <span class="w-20 border-t-2 border-solid border-indigo-200 inline-block mb-3"></span>
+                <h5 class="text-xl font-medium uppercase mb-4">Run Our Business Responsibly</h5>
+                <p class="text-gray-600">We are agile and we strive for high performance—by acting as entrepreneurs and owners of the company. We use sound business judgment to make decisions and do so within our authority, using informed judgment to take appropriate risks and remaining accountable even where decision making is automated. We recognize the limits to our individual authority. When situations arise that require a more specialized or senior-level review, we are prudent in our decision making and seek counsel. We spend Accenture’s money as if it were our own. We are vigilant and responsible with resources with an eye to the bottom line. We speak up when we see waste.</p>
+              </div>
+
+              <div class="md:w-1/3 md:px-4 xl:px-6 mt-8 md:mt-0 text-center">
+                <span class="w-20 border-t-2 border-solid border-indigo-200 inline-block mb-3"></span>
+                <h5 class="text-xl font-medium uppercase mb-4">Be a Good Corporate Citizen</h5>
+                <p class="text-gray-600">We support and respect human rights, foster environmental responsibility and encourage our people’s involvement in the communities where we work and live. </p>
+              </div>
+
+      
+            </div>
+      
+          </div>
+        </div>
+      
+      </div>
+      <script src="../static/index.js"></script>
+</body>
+</html>

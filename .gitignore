@@ -1,0 +1,26 @@
+# Entornos virtuales
+.venv/
+.env
+
+# Configuraciones de IDE
+.vs/
+.vscode/
+
+# Dependencias de Node.js (si no utilizas Node.js)
+node_modules/
+package-lock.json
+package.json
+
+# Archivos temporales y de caché
+__pycache__/
+.pytest_cache
+*.pyc
+*.swp
+
+# Archivos de configuración local
+config.py
+local_settings.py
+
+# Bases de datos
+*.db
+*.sqlite
