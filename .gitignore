@@ -8,8 +8,6 @@
 
 # Dependencias de Node.js (si no utilizas Node.js)
 node_modules/
-package-lock.json
-package.json
 
 # Archivos temporales y de caché
 __pycache__/
