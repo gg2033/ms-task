@@ -8,12 +8,14 @@ import os
 import json
 import google.generativeai as genai
 
+from dotenv import load_dotenv
+
+load_dotenv()  # Load variables from .en
 
 app = Flask(__name__)
-app.config.from_pyfile('./settings.py')
-apikey=app.config['API_KEY']
-tab_key=app.config['TAB_KEY']
-tab_token=app.config['TAB_TOKEN']
+apikey=os.getenv('API_KEY')
+tab_key=os.getenv('TAB_KEY')
+tab_token=os.getenv('TAB_TOKEN')
 
 
 # Configurar la carpeta donde se guardarán los archivos (static)
@@ -21,7 +23,7 @@ UPLOAD_FOLDER = 'static/uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 url = "https://api.trello.com/1/cards"
-print("LA  API KEY ES " + apikey)
+
 genai.configure(api_key=apikey)
 
 # Especifica el ID del tablero y la lista
