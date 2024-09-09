@@ -17,9 +17,10 @@ Utilize Tailwind CSS para crear la interfaz.
 API_KEY=?
 TAB_KEY=?
 TAB_TOKEN=?
-5. Ejecuta los siguiente comandos: pip install -r requirements.txt, luego npm install
-6. flask --app main run
-7. entrar a http://127.0.0.1:5000/
+LIST_KEY=?
+6. Ejecuta los siguiente comandos: pip install -r requirements.txt, luego npm install
+7. flask --app main run
+8. entrar a http://127.0.0.1:5000/
 
 ![gen-task](https://github.com/user-attachments/assets/e893f510-426d-476f-997e-56c64948f899)
 
