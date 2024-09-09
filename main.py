@@ -16,6 +16,7 @@ app = Flask(__name__)
 apikey=os.getenv('API_KEY')
 tab_key=os.getenv('TAB_KEY')
 tab_token=os.getenv('TAB_TOKEN')
+list_key=os.getenv('LIST_KEY')
 
 
 # Configurar la carpeta donde se guardarán los archivos (static)
@@ -81,7 +82,7 @@ def generateTask():
         }
 
         query = {
-        'idList': '66d703a4d83cac99a905bdfa',
+        'idList': list_key,
         'key': tab_key,
         'token': tab_token,
         'name': data[0]["titulo"],
