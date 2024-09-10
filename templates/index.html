@@ -30,13 +30,20 @@
               <h1 class="text-3xl md:text-4xl font-medium mb-2">Subir Video</h1>
               <form method="POST" action="/upload" enctype="multipart/form-data">
                   <input class="bg-indigo-600 text-white py-2 px-6 rounded-full text-xl mt-6" type="file" name="file">
-                  <input class="bg-indigo-600 text-white py-2 px-6 rounded-full text-xl mt-6" type="submit">
+                  <input class="bg-indigo-600 text-white py-2 px-6 rounded-full text-xl mt-6" type="submit" value="Subir video">
               </form>
 
       
               <form action="/task" method="POST">
-                <button type="submit" class="bg-indigo-600 text-white py-2 px-6 rounded-full text-xl mt-6">Generar Tarea</button>
+                <button type="submit" class="bg-indigo-600 text-white py-2 px-6 rounded-full text-xl mt-6">{{ accion }}</button>
             </form>
+            {% if show_borrar %}
+            <form action="/delete" method="POST">
+
+              <button type="submit" class="bg-indigo-600 text-white py-2 px-6 rounded-full text-xl mt-6">Borrar Video Subido y transcripciones</button>
+          </form>
+          {% endif %}
+   
             <div>{{ mensaje }}</div>
 
             </div>
