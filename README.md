@@ -22,6 +22,7 @@ LIST_KEY=?
 7. flask --app main run
 8. entrar a http://127.0.0.1:5000/
 9. DEMO ONLINE ->https://ms-task.onrender.com/
+10. Tablero publico https://trello.com/b/68ASxo8k/prueba-ia
 
 ![gen-task](https://github.com/user-attachments/assets/e893f510-426d-476f-997e-56c64948f899)
 
