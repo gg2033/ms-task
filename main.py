@@ -122,7 +122,7 @@ def generateTask():
                 params=query
             )
 
-        return render_template('index.html', mensaje="Tareas Creada", accion="Generar Tareas", show_borrar="true"),200
+        return render_template('index.html', mensaje="Tareas Creada", accion="Crear Tareas", show_borrar="true"),200
     else:
         # Nombre del archivo de video en el mismo directorio
         video_file = "./static/uploads/video.mp4"
@@ -146,7 +146,7 @@ def generateTask():
                 with open("transcripcion.txt", "w", encoding="utf-8") as text_file:
                     text_file.write(text)
                 print("Transcripción completa y guardada en 'transcripcion.txt'.")
-                return render_template('index.html', mensaje="Transcripcion Creada", accion="Crear Tarea", show_borrar="true")
+                return render_template('index.html', mensaje="Transcripcion Creada", accion="Crear Tareas", show_borrar="true")
             except sr.UnknownValueError:
                 print("No se pudo entender el audio.")
             except sr.RequestError as e:
