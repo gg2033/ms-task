@@ -102,29 +102,27 @@ def generateTask():
         # Convertir la respuesta a un objeto Python
         data = json.loads(json_string)
         print(data)
+
         headers = {
-        "Accept": "application/json"
-        }
+            "Accept": "application/json"
+            }
+        for  i in range(3):
+            query = {
+            'idList': list_key,
+            'key': tab_key,
+            'token': tab_token,
+            'name': data[i]["titulo"],
+            'desc': data[i]["descripcion"]
+            }
 
-        query = {
-        'idList': list_key,
-        'key': tab_key,
-        'token': tab_token,
-        'name': data[0]["titulo"],
-        'desc': data[0]["descripcion"]
-        }
+            response = requests.request(
+                "POST",
+                url,
+                headers=headers,
+                params=query
+            )
 
-        response = requests.request(
-            "POST",
-            url,
-            headers=headers,
-            params=query
-        )
-
-
-        print(response.text)
-
-        return render_template('index.html', mensaje="Tarea Creada", accion="Generar Tarea", show_borrar="true"),200
+        return render_template('index.html', mensaje="Tareas Creada", accion="Generar Tareas", show_borrar="true"),200
     else:
         # Nombre del archivo de video en el mismo directorio
         video_file = "./static/uploads/video.mp4"
