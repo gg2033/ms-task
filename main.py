@@ -94,7 +94,7 @@ def generateTask():
         with open(transcription_file, "r", encoding="utf-8") as file:
             text = file.read()
 
-        prompt = "Encuentra 5 tareas  dado  un texto, debe tener un titulo y una descripcion donde tenga los pasos necesarios para lograr  la tarea. Debe  responder con el siguiente esquema json: Tarea = {titulo: str, descripcion: str} Devolver `list[Tarea]`. El texto es: "+text+"."
+        prompt = "Encuentra 5 tareas  dado  un texto, debe tener un titulo y una descripcion indicando 5 activades para lograr lo del titulo. Debe  responder con el siguiente esquema json: Tarea = {titulo: str, descripcion: str} Devolver `list[Tarea]`. El texto es: "+text+"."
         # Llamar a la API de ChatGPT
         response = model.generate_content(prompt)
         json_string = response.text.strip()
@@ -138,7 +138,7 @@ def generateTask():
 
         # Leer el archivo de audio
         with sr.AudioFile(audio_file) as source:
-            audio_data = recognizer.listen(source, phrase_time_limit=None)
+            audio_data = recognizer.record(source, duration=300)
             
             # Transcribir el audio a texto
             try:
@@ -149,6 +149,8 @@ def generateTask():
                 return render_template('index.html', mensaje="Transcripcion Creada", accion="Crear Tareas", show_borrar="true")
             except sr.UnknownValueError:
                 print("No se pudo entender el audio.")
+                return render_template('index.html', mensaje="No se pudo entender el audio.",  accion="Generar Transcripcion", show_borrar="true")
             except sr.RequestError as e:
                 print(f"No se pudo completar la solicitud: {e}")
+                return render_template('index.html', mensaje="No se pudo entender el audio.",  accion="Generar Transcripcion", show_borrar="true")
         
